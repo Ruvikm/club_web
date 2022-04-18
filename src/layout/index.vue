@@ -1,72 +1,174 @@
 <template>
   <div>
-    <el-header style="height: 60px">
-      <v-header />
-    </el-header>
-
-    <el-main>
-      <router-view class="main" />
-    </el-main>
-    <el-footer>
-      <v-footer />
-    </el-footer>
+    <main-view />
   </div>
 </template>
 <script>
-import Header from "@/layout/common/Header";
-import Footer from "@/layout/common/Footer";
-
-export default {
-  name: "Layout",
+import Vue from 'vue';
+import MainView from '@/layout/common/main.vue';
+export default Vue.extend({
+  name: 'App',
   components: {
-    "v-header": Header,
-    "v-footer": Footer,
+    MainView,
   },
-};
+})
 </script>
 
-<style scoped="scoped">
-.el-header {
-  background: #fff;
-  border-bottom: 1px solid rgba(0, 40, 100, 0.12);
-  z-index: 80;
-}
-
-.el-main {
-  padding: 0;
-  background-attachment: fixed;
-  min-height: 85vh;
+<style>
+body {
+  margin: 0;
+  display: block;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgb(246, 247, 248);
   overflow-x: hidden;
 }
 
-.el-footer {
+a, li {
+  text-decoration: none !important;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  color: inherit;
+}
+
+h4, .h4 {
+  font-size: 1.125rem;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.66em;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.1;
+  color: inherit;
+}
+
+p {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.avatar-md {
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 1rem;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ced4da no-repeat center/cover;
   position: relative;
-  width: 100%;
-  padding-top: 1.2rem;
-  background: #fff;
-  border-top: 1px solid rgba(0, 40, 100, 0.12);
-  z-index: 80;
-}
-
-.main {
-  color: #333;
   text-align: center;
-  margin: 78px auto;
-  min-height: 550px;
+  color: #868e96;
+  font-weight: 600;
+  vertical-align: bottom;
+  font-size: .875rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-@media screen and (max-width: 600px) {
-  .main {
-    width: 95%;
-    padding: 3px;
 
-    position: relative;
-    top: 0;
-    bottom: 0;
-  }
+.pt-5, .py-5 {
+  padding-top: 1.5rem !important;
 }
-@media screen and (min-width: 1196px) {
-  .main {
-    width: 1024px;
-  }
+
+.text-default {
+  color: #495057 !important;
 }
+
+.text-muted {
+  color: #9aa0ac !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.article-summary-md {
+  position: relative;
+  line-height: 1.4em;
+  /* 3 times the line-height to show 3 lines */
+  height: 4.2em;
+  overflow: hidden;
+}
+
+.article-summary-md::after {
+  content: "...";
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 20px 1px 45px;
+  /*background:url(http://newimg88.b0.upaiyun.com/newimg88/2014/09/ellipsis_bg.png) repeat-y;*/
+}
+
+.article-summary-sd {
+  position: relative;
+  line-height: 1.4em;
+  /* 1 times the line-height to show 1 lines */
+  height: 1.4em;
+  overflow: hidden;
+}
+
+.article-summary-sd::after {
+  content: "...";
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 20px 1px 45px;
+  /*background:url(http://newimg88.b0.upaiyun.com/newimg88/2014/09/ellipsis_bg.png) repeat-y;*/
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.wrapper {
+  max-width: 980px;
+  margin: 20px auto;
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  float: none;
+}
+
+.mr-3, .mx-3 {
+  margin-right: 0.75rem !important;
+}
+
+
+.navbar-brand-img {
+  height: 2rem;
+  line-height: 2rem;
+  vertical-align: bottom;
+  margin-right: .5rem;
+  width: auto;
+}
+
+.topic-brand-img {
+  height: 4rem;
+  line-height: 2rem;
+  vertical-align: bottom;
+  margin-right: .5rem;
+  width: auto;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 </style>

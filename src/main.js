@@ -5,6 +5,10 @@ import App from './App.vue';
 import router from "./router";
 import store from './store';
 
+//信息提示框
+import myconfirm from '../src/utils/myconfirm'
+Vue.prototype.$myconfirm = myconfirm;
+
 Vue.use(ElementUI);
 
 new Vue({

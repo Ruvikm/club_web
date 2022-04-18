@@ -11,7 +11,7 @@ module.exports = {
   lintOnSave: false,
   productionSourceMap: false,
   devServer: {
-    port: process.env.PORT || 8080
+    port:  8080
   },
   configureWebpack: {
     resolve: {

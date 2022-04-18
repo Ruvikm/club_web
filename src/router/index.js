@@ -5,13 +5,37 @@ Vue.use(Router);
 
 export const constantRoutes = [
   {
-    path: "/layout",
+    path: "/",
     component: Layout,
     hidden: true,
     children: [
       {
-        path: "/home",
+        path: "/",
         component: () => import("@/views/home/Home"), //组件地址
+      },
+      {
+        path: "/login",
+        component: () => import("@/views/user/login"), //组件地址
+      },
+      {
+        path: "/register",
+        component: () => import("@/views/user/register"), //组件地址
+      },
+      {
+        path: "/userinfo",
+        component: () => import("@/views/user/userInfo"), //组件地址
+      },
+      {
+        path: "/ipost",
+        component: () => import("@/views/article/post"), //组件地址
+      },
+      {
+        path: "/article",
+        component: () => import("@/views/article/article"), //组件地址
+      },
+      {
+        path: "/clublist",
+        component: () => import("@/views/club/clubList"), //组件地址
       },
     ],
   },
