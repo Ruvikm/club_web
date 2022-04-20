@@ -128,6 +128,7 @@ export default {
   },
   computed: {
     user() {
+      //console.log("登录状态栏"+this.$store.getters.name);
       return this.$store.getters.name;
     },
     avatarURL() {},

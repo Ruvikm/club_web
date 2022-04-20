@@ -15,92 +15,33 @@
               <el-button
                 style="float: right; padding: 2px 0"
                 type="text"
-                @click="Apply"
+                @click="Apply(item.name)"
                 >申请加入</el-button
               >
             </div>
-            <div class="text item" style="float: left; padding: 3px 0">
-              {{ item.introduction }}
+            <div class="text item" style="float: left; padding: 3px 0 ;height:20px">
+              <span>{{ item.introduction }}</span>
             </div>
           </el-card>
         </el-col>
-      </el-col>
-      <el-col>
-        <div class="vertical-container text-center" style="padding-top: 10px">
-          <el-pagination
-            :hide-on-single-page="true"
-            v-model="clubParm"
-            layout="prev, pager, next"
-            :current-page="1"
-            :total="6"
-            prev-text="上一页"
-            next-text="下一页"
-            @current-change="currentChange"
-          >
-          </el-pagination>
-        </div>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: "clubCard",
-  // props: {
-  //   clubList: {
-  //     type: Object,
-  //   },
-  // },
-  data() {
-    return {
-      clubParm: [
-        {
-          currentPage: "1",
-          total: "6",
-        },
-      ],
-
-      clubList: [
-        {
-          name: "111",
-          introduction: "2324",
-        },
-        {
-          name: "222",
-          introduction: "321",
-        },
-        {
-          name: "fdh",
-          introduction: "121231",
-        },
-        {
-          name: "qewq",
-          introduction: "dsfsfd",
-        },
-        {
-          name: "qewq",
-          introduction: "dsfsfd",
-        },
-        {
-          name: "qewq",
-          introduction: "dsfsfd",
-        },
-        {
-          name: "qewq",
-          introduction: "dsfsfd",
-        },
-        {
-          name: "qewq",
-          introduction: "dsfsfd",
-        },
-      ],
-    };
+  props: {
+    clubList: {
+      type: Array,
+    },
   },
   methods: {
-    Apply() {},
-    currentChange(page) {
-      this.$emit("currentChange", page);
+    Apply(name) {
+      this.$emit('Apply', name);
     },
   },
   components: {},

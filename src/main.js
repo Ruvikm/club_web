@@ -9,6 +9,10 @@ import store from './store';
 import myconfirm from '../src/utils/myconfirm'
 Vue.prototype.$myconfirm = myconfirm;
 
+//清空表单
+import resetForm from '../src/utils/resrtForm'
+Vue.prototype.$resetForm = resetForm;
+
 Vue.use(ElementUI);
 
 new Vue({

@@ -83,7 +83,7 @@ export default {
         password: "",
         confirmPassword: "",
       },
-      registerUser:{
+      registerUser: {
         id: "",
         deptId: "",
         editType: "", //0新增 1：编辑
@@ -139,8 +139,8 @@ export default {
           if (res && res.code == 200) {
             this.$message.success(res.msg);
             this.$router.push({
-                path: "/login",
-              });
+              path: "/login",
+            });
           }
         }
       });
