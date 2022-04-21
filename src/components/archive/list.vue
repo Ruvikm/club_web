@@ -30,7 +30,7 @@
                 ></el-avatar>
               </el-col>
               <el-col :xs="16" :sm="16" :xl="16">
-                <div style="top:6px ;position:relative">
+                <div style="top: 6px; position: relative">
                   <el-link class="text-default">
                     {{ article.author }}
                   </el-link>
@@ -53,64 +53,12 @@
 <script>
 export default {
   name: "ArticleList",
-  // props: {
-  //   ArticleList: {
-  //     type: Object,
-  //   },
-  // },
-  data() {
-    return {
-      ArticleList:[
-        {
-          id:1,
-          title:"阿萨德撒",
-          content:"aadsads  a个地方改的发啊带啊u地方带飞的发的发地方带飞的的 ",
-          author:"Ruvik",
-          createTime:"2020/1/24"
-        },
-         {
-          id:2,
-          title:"阿萨德撒",
-          content:"aadsads  a个地方改的发啊带啊us大大爱的阿达的阿萨德阿书法uu阿覅UA嗲嗲发到撒 ",
-          author:"Ruvik",
-          createTime:"2020/1/24"
-        },
-         {
-          id:3,
-          title:"阿萨德撒",
-          content:"aadsads  a个地方改的发啊带啊us大大爱的阿达的阿萨德阿书法uu阿覅UA嗲嗲发到撒 ",
-          author:"Ruvik",
-          createTime:"2020/1/24"
-        },
-         {
-          id:4,
-          title:"阿萨德撒",
-          content:"aadsads  a个地方改的发啊带啊us大大爱的阿达的阿萨德阿书法uu阿覅UA嗲嗲发到撒 ",
-          author:"Ruvik",
-          createTime:"2020/1/24"
-        },
-         {
-          id:5,
-          title:"阿萨德撒",
-          content:"aadsads  a个地方改的发啊带啊us大大爱的阿达的阿萨德阿书法uu阿覅UA嗲嗲发到撒 ",
-          author:"Ruvik",
-          createTime:"2020/1/24"
-        },
-         {
-          id:6,
-          title:"阿萨德撒",
-          content:"aadsads  a个地方改的发啊带啊us大大爱的阿达的阿萨德阿书法uu阿覅UA嗲嗲发到撒 ",
-          author:"Ruvik",
-          createTime:"2020/1/24"
-        }
-      ]
-
-      
-    };
+  props: {
+    ArticleList: {
+      type: Array,
+    },
   },
-  methods: {
-  
-  },
+  methods: {},
 };
 </script>
 

@@ -6,6 +6,7 @@
         style="margin-top: -5px; border: 0"
         mode="horizontal"
         @select="handleSelectTopic"
+        default-active="new"
       >
         <el-menu-item index="new">最新</el-menu-item>
         <el-menu-item index="Admissions">招生</el-menu-item>
