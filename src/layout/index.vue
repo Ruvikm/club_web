@@ -100,15 +100,14 @@ p {
   overflow: hidden;
 }
 
-.article-summary-md::after {
+/* .article-summary-md::after {
   content: "...";
   font-weight: bold;
   position: absolute;
   bottom: 0;
   right: 0;
   padding: 0 20px 1px 45px;
-  /*background:url(http://newimg88.b0.upaiyun.com/newimg88/2014/09/ellipsis_bg.png) repeat-y;*/
-}
+} */
 
 .article-summary-sd {
   position: relative;

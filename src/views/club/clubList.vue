@@ -9,14 +9,14 @@
     <el-col>
       <div class="vertical-container text-center" style="padding-top: 10px">
         <el-pagination
-          v-model="parms"
-          layout="prev, pager, next"
-          :current-page="parms.currentPage"
-          :total="parms.total"
-          prev-text="上一页"
-          next-text="下一页"
-          @current-change="currentChange"
           @size-change="sizeChange"
+          @current-change="currentChange"
+          :current-page.sync="parms.currentPage"
+          :page-size="parms.pageSize"
+          layout="prev, pager, next"
+          :total="parms.total"
+          background
+          
         >
         </el-pagination>
       </div>
@@ -84,7 +84,6 @@ export default {
       options: [],
       //申请规则
       rules: {
-
         deptId: [
           {
             required: true,
@@ -120,7 +119,7 @@ export default {
         introduction: "",
         deptName: "",
         state: 0,
-        deptId:"",
+        deptId: "",
       },
       //申请弹窗
       // 新增或编辑弹窗数据
@@ -136,10 +135,10 @@ export default {
     this.getclubListData();
   },
   methods: {
-     //获取选中的值
-     getSelect(deptId) {
-        this.ApplyModule.deptId = deptId;
-     },
+    //获取选中的值
+    getSelect(deptId) {
+      this.ApplyModule.deptId = deptId;
+    },
     //获取选项列表
     async getChoiceList() {
       let parms = {

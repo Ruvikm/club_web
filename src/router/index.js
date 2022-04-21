@@ -37,6 +37,10 @@ export const constantRoutes = [
         path: "/clublist",
         component: () => import("@/views/club/clubList"), //组件地址
       },
+      {
+        path: "/articleDetails/:id",
+        component: () => import("@/views/article/articleDetails"), //组件地址
+      },
     ],
   },
 ];
