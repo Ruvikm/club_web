@@ -9,7 +9,7 @@
         <el-card>
           <div class="card-body d-flex flex-column">
             <el-link
-              :href="/articleDetails/ + article.id"
+              :href="'/#/article/' + article.id"
               style="margin-bottom: 0.5rem"
             >
               <h4>
