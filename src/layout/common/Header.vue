@@ -172,6 +172,11 @@ export default {
     async handleCommand(item) {
       let _this = this;
       switch (item) {
+        case "user":
+          _this.$router.push({
+            path: "/userInfo",
+          });
+          break;
         case "user-info":
           _this.$router.push({
             path: "/userInfo",
