@@ -96,18 +96,18 @@ p {
   position: relative;
   line-height: 1.4em;
   /* 3 times the line-height to show 3 lines */
-  height: 4.2em;
+  height: 3.2em;
   overflow: hidden;
 }
 
-/* .article-summary-md::after {
+.article-summary-md::after {
   content: "...";
   font-weight: bold;
   position: absolute;
   bottom: 0;
   right: 0;
   padding: 0 20px 1px 45px;
-} */
+}
 
 .article-summary-sd {
   position: relative;
