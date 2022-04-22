@@ -49,8 +49,8 @@
     </el-col>
     <el-col :xs="24" :sm="12" :xl="12" class="intro vditor-reset verify__sign">
       <div>
-        <h2>欢迎来到 Club Square</h2>
-        <p><a rel="nofollow" href="/">RYMCU</a> 是一个分享社团日常的平台。</p>
+        <h2>欢迎来到 Alona</h2>
+        <p><a rel="nofollow" href="/">Alona</a> 是一个分享社团日常的平台。</p>
         <p>
           这是一个小众社区。大家在这里相互<strong>信任</strong>，以<em
             >平等 • 自由 • 奔放</em
