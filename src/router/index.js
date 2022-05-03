@@ -23,8 +23,22 @@ export const constantRoutes = [
       },
       {
         path: "/userinfo",
+        redirect:"/userinfo/account",//默认选择第一个
         component: () => import("@/views/user/userInfo"), //组件地址
+        children: [
+          {
+            path: "/userinfo/account",
+            name:"account",
+            component: () => import("@/views/user/settings/account"), //组件地址
+          },
+          {
+            path: "/userinfo/notification",
+            name:"notification",
+            component: () => import("@/views/user/settings/notification"), //组件地址
+          },
+        ],
       },
+
       {
         path: "/ipost",
         component: () => import("@/views/article/post"), //组件地址
