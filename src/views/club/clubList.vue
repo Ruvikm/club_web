@@ -4,6 +4,15 @@
       <h1>社团目录</h1>
     </el-col>
     <el-col>
+      <el-input
+        placeholder="请输入内容，回车搜索"
+        prefix-icon="el-icon-search"
+        v-model="SearchName"
+        @keyup.enter.native="Search"
+      >
+      </el-input>
+    </el-col>
+    <el-col>
       <left-image-card :clubList="clubListData" @Apply="ApplyClub" />
     </el-col>
     <el-col>
@@ -16,7 +25,6 @@
           layout="prev, pager, next"
           :total="parms.total"
           background
-          
         >
         </el-pagination>
       </div>
@@ -80,6 +88,7 @@ export default {
   name: "clubList",
   data() {
     return {
+      SearchName:"",
       // 选择社团部门数据
       options: [],
       //申请规则
@@ -135,6 +144,9 @@ export default {
     this.getclubListData();
   },
   methods: {
+    async Search() {
+      console.log(this.SearchName);
+    },
     //获取选中的值
     getSelect(deptId) {
       this.ApplyModule.deptId = deptId;
