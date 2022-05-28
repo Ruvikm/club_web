@@ -11,6 +11,16 @@ export async function addApplyApi(parm) {
 }
 
 //获取社团部门
-export async function getChoiceListApi(parm){
-  return await http.get("/api/club/apply/DepChoiceList",parm)
+export async function getChoiceListApi(parm) {
+  return await http.get("/api/club/apply/DepChoiceList", parm);
+}
+
+//申请创建社团
+export async function addClubApplyApi(parm) {
+  return await http.post("/api/club/createClub", parm);
+}
+
+//获取创建社团审批列表
+export async function CheckStateApi(parm) {
+  return await http.get("/api/club/createClub/checkState", parm);
 }

@@ -55,6 +55,10 @@ export const constantRoutes = [
         path: "/article/:id",
         component: () => import("@/views/article/articleDetails"), //组件地址
       },
+      {
+        path: "/createclub",
+        component: () => import("@/views/club/createClub"), //组件地址
+      },
     ],
   },
 ];

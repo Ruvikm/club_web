@@ -32,6 +32,14 @@
         <!-- 如果已登录 -->
         <el-col v-if="user" style="text-align: right">
           <el-link
+            icon="el-icon-s-custom"
+            type="info"
+            :underline="false"
+            style="padding-left: 10px;padding-right: 10px"
+            @click="CreateClub"
+            >创建社团
+          </el-link>
+          <el-link
             icon="el-icon-s-tools"
             type="info"
             href="http://localhost:9527/"
@@ -139,6 +147,12 @@ export default {
     },
   },
   methods: {
+
+    CreateClub(){
+       this.$router.push({
+        path: "/createclub",
+      });
+    },
     Post() {
       this.$router.push({
         path: "/ipost",
