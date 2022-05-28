@@ -16,6 +16,10 @@ export async function addUserApi(parm){
 export async function editUserInfoApi(parm){
   return await http.put("/api/club/user",parm)
 }
+//退出社团
+export async function LeaveClubApi(parm){
+  return await http.put("/api/club/user/LeaveClub",parm)
+}
 //退出登录
 export async function loginOutApi(parm){
   return await http.post("/api/sysUser/loginOut",parm)

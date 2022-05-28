@@ -28,6 +28,16 @@
               </el-table-column>
             </el-table>
           </el-form-item>
+          <!-- 占位用 -->
+          <el-form-item></el-form-item>
+          <el-form-item></el-form-item>
+          <el-form-item>
+            <el-col :span="12" :offset="16">
+              <el-button type="danger" plain @click="LeaveClub"
+                >退出社团</el-button
+              >
+            </el-col>
+          </el-form-item>
         </el-col>
         <el-col v-else>
           <el-form-item label="申请状态:">
@@ -67,7 +77,7 @@
 </template>
 
 <script>
-import { getShowDataApi } from "@/api/user";
+import { getShowDataApi, LeaveClubApi } from "@/api/user";
 
 export default {
   data() {
@@ -97,6 +107,19 @@ export default {
     },
   },
   methods: {
+    async LeaveClub() {
+      let confirm = await this.$myconfirm("确认退出当前社团？");
+      if (confirm) {
+        console.log(this.prams);
+        let res = await LeaveClubApi(this.prams);
+        if(res && res.code ==200){
+           this.$message.success(res.msg);
+           //刷新
+           this.getShowData();
+        }
+      }
+    },
+
     async getShowData() {
       let res = await getShowDataApi(this.prams);
       console.log(res);
@@ -106,9 +129,13 @@ export default {
         if (this.InfoModel.roleName == null) {
           this.InfoModel.roleName = "普通成员";
         }
-        var a = new Array();
-        a.push(this.InfoModel.latestMeeting);
-        this.MeetingData = a;
+        if (this.InfoModel.latestMeeting == null) {
+          this.MeetingData = null;
+        } else {
+          var a = new Array();
+          a.push(this.InfoModel.latestMeeting);
+          this.MeetingData = a;
+        }
       }
     },
   },

@@ -119,6 +119,7 @@ export default {
         currentPage: 1, //当前是第几页
         pageSize: 6, //每页查询条数
         total: 0,
+        SearchName:""
       },
       //社团列表
       clubListData: [],
@@ -145,7 +146,12 @@ export default {
   },
   methods: {
     async Search() {
-      console.log(this.SearchName);
+      this.parms.SearchName=this.SearchName;
+       let res = await getClubListApi(this.parms);
+      if (res && res.code == 200) {
+        this.parms.total = res.data.total;
+        this.clubListData = res.data.records;
+      }
     },
     //获取选中的值
     getSelect(deptId) {

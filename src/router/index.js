@@ -11,7 +11,7 @@ export const constantRoutes = [
     children: [
       {
         path: "/",
-        component: () => import("@/views/home/Home"), //组件地址
+        component: () => import("@/views/article/article"), //组件地址
       },
       {
         path: "/login",
@@ -43,10 +43,10 @@ export const constantRoutes = [
         path: "/ipost",
         component: () => import("@/views/article/post"), //组件地址
       },
-      {
-        path: "/article",
-        component: () => import("@/views/article/article"), //组件地址
-      },
+      // {
+      //   path: "/article",
+      //   component: () => import("@/views/article/article"), //组件地址
+      // },
       {
         path: "/clublist",
         component: () => import("@/views/club/clubList"), //组件地址

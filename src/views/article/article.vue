@@ -41,7 +41,7 @@ export default {
     // 分页相关
     currentChange(val) {
       this.parms.currentPage = val;
-      this.getclubListData();
+      this.getArticleList();
       console.log("当前页");
       console.log(val);
     },
@@ -50,7 +50,7 @@ export default {
       console.log(val);
       this.parms.currentPage = 1;
       this.parms.pageSize = val;
-      this.getclubListData();
+      this.getArticleList();
     },
     //选择topic
     selectTopic(item) {

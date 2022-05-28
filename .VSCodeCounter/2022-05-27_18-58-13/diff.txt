@@ -1,0 +1,37 @@
+Date : 2022-05-27 18:58:13
+Directory : d:\Employment\code\Club_Management_System\club_web\src
+Total : 6 files,  312 codes, 0 comments, 15 blanks, all 327 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Vue        |          4 |        293 |          2 |         13 |        308 |
+| JavaScript |          2 |         19 |         -2 |          2 |         19 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                        | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                           |          6 |        312 |          0 |         15 |        327 |
+| api                                                                                         |          1 |          6 |         -2 |          1 |          5 |
+| router                                                                                      |          1 |         13 |          0 |          1 |         14 |
+| views                                                                                       |          4 |        293 |          2 |         13 |        308 |
+| views\club                                                                                  |          1 |         13 |          0 |         -1 |         12 |
+| views\user                                                                                  |          3 |        280 |          2 |         14 |        296 |
+| views\user\settings                                                                         |          2 |        236 |          2 |         14 |        252 |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                    | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\Employment\code\Club_Management_System\club_web\src\api\user.js                          | JavaScript |          6 |         -2 |          1 |          5 |
+| d:\Employment\code\Club_Management_System\club_web\src\router\index.js                      | JavaScript |         13 |          0 |          1 |         14 |
+| d:\Employment\code\Club_Management_System\club_web\src\views\club\clubList.vue              | Vue        |         13 |          0 |         -1 |         12 |
+| d:\Employment\code\Club_Management_System\club_web\src\views\user\settings\account.vue      | Vue        |        104 |          2 |          5 |        111 |
+| d:\Employment\code\Club_Management_System\club_web\src\views\user\settings\notification.vue | Vue        |        132 |          0 |          9 |        141 |
+| d:\Employment\code\Club_Management_System\club_web\src\views\user\userInfo.vue              | Vue        |         44 |          0 |          0 |         44 |
+| Total                                                                                       |            |        312 |          0 |         15 |        327 |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

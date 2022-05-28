@@ -20,9 +20,9 @@
               mode="horizontal"
               @select="handleSelectMenu"
             >
-              <el-menu-item index="index">首页</el-menu-item>
-              <el-menu-item index="approve">社团申请</el-menu-item>
               <el-menu-item index="passage">社团风采</el-menu-item>
+              <!-- <el-menu-item index="index">首页</el-menu-item> -->
+              <el-menu-item index="approve">社团申请</el-menu-item>
             </el-menu>
           </el-col>
         </el-row>
@@ -31,13 +31,14 @@
       <el-col :xs="16" :sm="12" :md="12" :xl="9" style="padding-top: 1rem">
         <!-- 如果已登录 -->
         <el-col v-if="user" style="text-align: right">
-          <!-- <el-link
-            rel="nofollow"
+          <el-link
+            icon="el-icon-s-tools"
+            type="info"
+            href="http://localhost:9527/"
             :underline="false"
-            style="padding-left: 10px; padding-right: 10px"
-            @click="Post"
-            >发帖
-          </el-link> -->
+            style="padding-left: 10px;padding-right: 10px"
+            >后台管理
+          </el-link>
           <el-link rel="nofollow" :underline="false" style="margin-left: 10px">
             <el-dropdown trigger="click" @command="handleCommand">
               <el-avatar
@@ -86,6 +87,14 @@
 
         <!-- 如果未登录 -->
         <el-col v-else style="text-align: right">
+          <el-link
+            icon="el-icon-s-tools"
+            type="info"
+            href="http://localhost:9527/"
+            :underline="false"
+            style="padding-left: 10px"
+            >后台管理
+          </el-link>
           <el-link
             rel="nofollow"
             :underline="false"
@@ -138,7 +147,12 @@ export default {
     handleSelectMenu(item) {
       let _this = this;
       switch (item) {
-        case "index":
+        // case "index":
+        //   _this.$router.push({
+        //     path: "/",
+        //   });
+        //   break;
+        case "passage":
           _this.$router.push({
             path: "/",
           });
@@ -148,11 +162,7 @@ export default {
             path: "/clublist",
           });
           break;
-        case "passage":
-          _this.$router.push({
-            path: "/article",
-          });
-          break;
+
         default:
           _this.$router.push({
             name: item,
