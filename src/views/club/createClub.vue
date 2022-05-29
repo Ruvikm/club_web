@@ -54,7 +54,12 @@
             </el-table-column>
             <el-table-column prop="applyTime" label="申请时间">
             </el-table-column>
-            <el-table-column prop="state" label="申请状态">
+            <el-table-column
+              prop="state"
+              label="申请状态"
+              align="center"
+              width="220"
+            >
               <template slot-scope="scope">
                 <el-tag
                   size="normal"
@@ -76,6 +81,15 @@
                   disable-transitions
                   >审核失败</el-tag
                 >
+                <el-tag
+                  size="normal"
+                  type="danger"
+                  style="cursor:pointer"
+                  v-if="scope.row.state == '2'"
+                  disable-transitions
+                  @click="ReApplyClub(scope.row)"
+                  >重新申请</el-tag
+                >
               </template>
             </el-table-column>
           </el-table>
@@ -90,6 +104,7 @@ import { addClubApplyApi, CheckStateApi } from "@/api/department";
 export default {
   data() {
     return {
+      ReApply: 0,
       ApplyList: [],
       parms: {
         username: this.$store.getters.name,
@@ -114,11 +129,19 @@ export default {
       },
     };
   },
-  created(){
+  created() {
+    if(this.$store.getters.name==""){
+       this.$router.push({
+        path: "/",
+      });
+    }
     this.getApplyList(this.parms);
   },
   computed: {
     IsApply() {
+      if (this.ReApply) {
+        return true;
+      }
       if (this.ApplyList.length == 0) {
         return true;
       }
@@ -126,6 +149,13 @@ export default {
     },
   },
   methods: {
+    ReApplyClub(row) {
+      this.ReApply = 1;
+      this.getApplyList(this.parms);
+      this.$resetForm("ApplyForm", this.InfoModel);
+      this.$objCoppy(row, this.InfoModel);
+      console.log(this.InfoModel);
+    },
     async CreateClub() {
       this.$refs.ApplyForm.validate(async (valid) => {
         if (valid) {
@@ -133,6 +163,7 @@ export default {
           if (res && res.code == 200) {
             this.$message.success(res.msg);
             this.getApplyList(this.parms);
+            this.ReApply = 0;
           }
         }
       });
